@@ -3,6 +3,8 @@ import Searchbar from "./SearchBar";
 import Youtube from "../api/Youtube";
 
 class App extends React.Component {
+  state = { videos: [] };
+
   onTermSubmit = async (searchTerm) => {
     console.log(searchTerm);
     const response = await Youtube.get("/search", {
@@ -10,7 +12,8 @@ class App extends React.Component {
         q: searchTerm,
       },
     });
-    console.log(response);
+    this.setState({ videos: response.data.items });
+    console.log(this.state.videos);
   };
   render() {
     return (
