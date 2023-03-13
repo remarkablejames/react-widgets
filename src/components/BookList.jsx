@@ -1,13 +1,8 @@
-import BookShow from "./BookShow";
-function BookList({ books }) {
-  return (
-    <div>
-      {books.map((book) => (
-        <BookShow key={book.id} book={book} />
-      ))}
-      {books.length}
-    </div>
-  );
+import { useContext } from "react";
+import { BooksContext } from "../context/BooksContext";
+function BookList() {
+  const value = useContext(BooksContext);
+  return <h1>here's what we have:::: {value.text}</h1>;
 }
 
 export default BookList;

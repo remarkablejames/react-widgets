@@ -1,0 +1,25 @@
+# Get all books
+GET http://localhost:3004/books HTTP/1.1
+Content-Type: application/json
+
+
+###
+
+# Get book with id 1
+POST http://localhost:3004/books HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "The Lord of the Rings",
+  "author": "J.R.R. Tolkien"
+}
+
+###
+
+# update book with id 1
+PUT http://localhost:3004/books/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "The Dark Tower"
+}
